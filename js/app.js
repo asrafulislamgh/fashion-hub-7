@@ -18,26 +18,26 @@ const showProducts = (products) => {
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h5 class="my-3">${product.title}</h5>
       <p>Category: ${product.category}</p>
 
       <div class="progress w-50 mx-auto">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ${
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${
           product.rating.rate * 20
         }%" aria-valuenow="${
       product.rating.rate
     }" aria-valuemin="0" aria-valuemax="5"></div>
       </div>
-      <h4>Rating: ${product.rating.rate}</h4>
+      <h6>${product.rating.rate}</h6>
 
       <P>(${product.rating.count})</p>
-      <h2>Price: $ ${product.price}</h2>
+      <h4>$${product.price}</h4>
       <button onclick="addToCart(${product.id},${
       product.price
     })" id="addToCart-btn" class="buy-now btn btn-primary" role="button">add to cart</button>
-      <button onclick= "showDetail(${
+      <button onclick= "selectData(${
         product.id
-      })" id="details-btn" class="btn btn-dark" role="button">Details</button></div>
+      })" id="details-btn" class="btn btn-dark" role="button"  data-bs-toggle="modal" data-bs-target="#modal">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -100,6 +100,39 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-const showDetail = (id) => {
-  alert(id);
+const selectData = (id) => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((response) => response.json())
+    .then((data) => showData(data));
+};
+const showData = (product) => {
+  document.getElementById("modal-container").innerHTML = "";
+  const image = product.image;
+  const div = document.createElement("div");
+  div.classList.add("text-center");
+  div.innerHTML = `<div class="single-product">
+    <div>
+  <img class="product-image" src=${image}></img>
+    </div>
+    <h5 class="my-3">${product.title}</h5>
+    <p>Category: ${product.category}</p>
+    <p>${product.description}</p>
+
+    <div class="progress w-50 mx-auto">
+      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${
+        product.rating.rate * 20
+      }%" aria-valuenow="${
+    product.rating.rate
+  }" aria-valuemin="0" aria-valuemax="5"></div>
+    </div>
+    <h6>${product.rating.rate}</h6>
+
+    <P>(${product.rating.count})</p>
+    <h4>$${product.price}</h4>
+    <button onclick="addToCart(${product.id},${
+    product.price
+  })" id="addToCart-btn" class="buy-now btn btn-primary" role="button">add to cart</button>
+
+    `;
+  document.getElementById("modal-container").appendChild(div);
 };
