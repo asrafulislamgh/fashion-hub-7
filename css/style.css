@@ -12,14 +12,14 @@ body {
   outline: none;
   border: none;
 }
-.search-box {
+/* .search-box {
   border: 1px solid rgb(3, 118, 211);
   width: 281px;
   border-radius: 5px;
   margin: auto;
   margin-top: 50px;
   border-right: none;
-}
+} */
 .search-button {
   padding: 10px 50px;
   border-radius: 25px;
@@ -83,4 +83,7 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+}
+.product {
+  padding: 20px 0;
 }
