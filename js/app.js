@@ -22,7 +22,7 @@ const showProducts = (products) => {
       <p>Category: ${product.category}</p>
 
       <div class="progress w-50 mx-auto">
-        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${
+        <div class="progress-bar progress-bar-striped rating-color" role="progressbar" style="width: ${
           product.rating.rate * 20
         }%" aria-valuenow="${
       product.rating.rate
@@ -119,7 +119,7 @@ const showData = (product) => {
     <p>${product.description}</p>
 
     <div class="progress w-50 mx-auto">
-      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${
+      <div class="progress-bar progress-bar-striped rating-color" role="progressbar" style="width: ${
         product.rating.rate * 20
       }%" aria-valuenow="${
     product.rating.rate
