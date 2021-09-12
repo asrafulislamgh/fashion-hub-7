@@ -20,11 +20,24 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
+
+      <div class="progress w-50 mx-auto">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ${
+          product.rating.rate * 20
+        }%" aria-valuenow="${
+      product.rating.rate
+    }" aria-valuemin="0" aria-valuemax="5"></div>
+      </div>
       <h4>Rating: ${product.rating.rate}</h4>
+
       <P>(${product.rating.count})</p>
       <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success" role="button">add to cart</button>
-      <button onclick= "showDetail(${product.id})" id="details-btn" class="btn btn-danger" role="button">Details</button></div>
+      <button onclick="addToCart(${product.id},${
+      product.price
+    })" id="addToCart-btn" class="buy-now btn btn-primary" role="button">add to cart</button>
+      <button onclick= "showDetail(${
+        product.id
+      })" id="details-btn" class="btn btn-dark" role="button">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
