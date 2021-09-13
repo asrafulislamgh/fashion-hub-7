@@ -42,6 +42,7 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+// Adding data to the Cart
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -100,11 +101,13 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+//fetchich the selected item
 const selectData = (id) => {
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then((response) => response.json())
     .then((data) => showData(data));
 };
+// Showing the selected item on the modal by clicking the detail button
 const showData = (product) => {
   document.getElementById("modal-container").innerHTML = "";
   const image = product.image;
