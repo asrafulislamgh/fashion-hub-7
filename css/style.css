@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;800&display=swap");
+
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
@@ -53,10 +55,10 @@ body {
 .cart {
   width: 330px;
   /* border: 1px solid green; */
-  padding: 10px;
+  padding: 15px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;
-  bottom: 30px;
+  /* bottom: 30px; */
   position: fixed;
 }
 .cart-main {
@@ -66,7 +68,7 @@ body {
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 200px;
+    grid-gap: 20px;
   }
   .cart {
     width: 300px;
@@ -87,9 +89,36 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+@media screen and (max-width: 600px) {
+  .cart {
+    position: relative;
+    margin: 0 auto;
+  }
+}
 .product {
   padding: 20px 10px;
 }
 .rating-color {
   background-color: #ff9529 !important;
+}
+.logo {
+  font-family: "Oxanium", cursive;
+  font-weight: 500;
+  font-size: 35px;
+  letter-spacing: -2px;
+  color: #631d7b;
+}
+.logo-img {
+  width: 3rem;
+  text-align: center;
+}
+.text-logo {
+  font-family: "Oxanium", cursive;
+  font-weight: 500;
+  font-size: 35px;
+  letter-spacing: -2px;
+  color: #51074a;
+}
+.purple {
+  background-color: #631d7b !important;
 }

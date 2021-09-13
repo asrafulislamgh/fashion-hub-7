@@ -22,29 +22,35 @@
 
 <body>
   <header class="container">
-    <h1 class="text-center pt-5 fw-bold display-5"><span class="text-primary">fashion</span>Hub</h1>
+    <div class="text-center  pt-3">
+      <img class="logo-img" src="logo.png" alt="">
+      <h1 class="text-primary text-center text-logo"><span class="fw-bold logo">FASHION</span>HUB</h1>
+    </div>
   </header>
   <main class="main">
     <div class="search-field">
       <div class="container">
-        <div class="input-group input-group-lg my-4">
-          <input id="input-field" type="text" class="form-control" placeholder="Search Your Products"
+        <div class="input-group input-group-md my-4 w-50 mx-auto">
+          <input id="input-field" type="text" class="form-control rounded-pill me-2" placeholder="Search Your Products"
             aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <span type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-            autocomplete="off" id="search-btn" onclick="loadProducts()">Search</span>
+          <span type="button" class="btn purple text-white rounded-pill search-button" data-toggle="button"
+            aria-pressed="false" autocomplete="off" id="search-btn" onclick="loadProducts()">Search</span>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-9 col-lg-9 col-sm-7">
-        <div id="all-products" class="">
+      <div class="col-md-9 col-lg-9 col-sm-7 order-2">
+        <div class="row-cols-1 row-cols-md-2 row-cols-
+        lg-2">
+          <div id="all-products" class="">
+          </div>
         </div>
       </div>
-      <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
+      <div class="col-md-3 col-lg-3 col-sm-5 cart-main order-1 order-sm-2 order-md-2 order-lg-2  order-xl-2">
         <div class="cart" id="my-cart">
           <table class="table">
             <thead>
-              <h1>My-Cart</h1>
+              <h3>My Cart</h3>
               <tr>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -61,31 +67,31 @@
               </tr>
               <tr>
                 <th>Price:</th>
-                <td>$ <span id="price">0</span></td>
+                <td>$<span id="price">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Delivery-Charge:</th>
-                <td>$ <span id="delivery-charge">0</span></td>
+                <td>$<span id="delivery-charge">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Total-Tax:</th>
-                <td>$ <span id="total-tax">0</span></td>
+                <td>$<span id="total-tax">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th scope="row">Total</th>
-                <td colspan="2">$ <span id="total">0</span></td>
+                <td colspan="2">$<span id="total">0</span></td>
                 <td></td>
               </tr>
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-primary text-center rounded-pill">Buy Now</button>
           </div>
         </div>
       </div>
@@ -104,7 +110,7 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

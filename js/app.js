@@ -34,10 +34,10 @@ const showProducts = (products) => {
       <h4>$${product.price}</h4>
       <button onclick="addToCart(${product.id},${
       product.price
-    })" id="addToCart-btn" class="buy-now btn btn-primary" role="button">add to cart</button>
+    })" id="addToCart-btn" class="buy-now btn btn-primary rounded-pill" role="button">Add to cart</button>
       <button onclick= "selectData(${
         product.id
-      })" id="details-btn" class="btn btn-dark" role="button"  data-bs-toggle="modal" data-bs-target="#modal">Details</button></div>
+      })" id="details-btn" class="btn purple text-white rounded-pill" role="button"  data-bs-toggle="modal" data-bs-target="#modal">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
@@ -131,7 +131,7 @@ const showData = (product) => {
     <h4>$${product.price}</h4>
     <button onclick="addToCart(${product.id},${
     product.price
-  })" id="addToCart-btn" class="buy-now btn btn-primary" role="button">add to cart</button>
+  })" id="addToCart-btn" class="buy-now btn btn-primary rounded-pill" role="button">add to cart</button>
 
     `;
   document.getElementById("modal-container").appendChild(div);
